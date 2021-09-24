@@ -1,11 +1,12 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 
+
 app = Flask(__name__)
 db = SQLAlchemy(app)
 
 # Replace [PASSWORD] with the root password for your mysql container
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:shhitsasecret@mysql:3306/flask-db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://douglasgray@dougiescoolmysql:remembermypassword@dougiescoolmysql.mysql.database.azure.com:3306/flaskdb'
 
 class Users(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
